@@ -5,7 +5,8 @@ public class respawnPoint : MonoBehaviour
 {
     // variables
     public GameObject player;
-    public Vector3 pos; 
+    public Vector3 pos;
+    public GameObject target;
 
 
 	// Use this for initialization
