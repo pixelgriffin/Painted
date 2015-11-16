@@ -129,6 +129,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
+
+            if (m_CharacterController.transform.position.y < -100f)
+            {
+                //m_Camera.transform.LookAt(GameObject.Find("Sphere").transform);
+                m_MouseLook.LookRotation(GameObject.Find("Sphere").transform.position, m_CharacterController.transform, m_Camera.transform);
+            }
         }
 
 
@@ -234,7 +240,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void RotateView()
         {
-            m_MouseLook.LookRotation (transform, m_Camera.transform);
+            m_MouseLook.LookRotation (Vector3.zero, transform, m_Camera.transform);
         }
 
 
