@@ -36,20 +36,20 @@ public class BlobCreator : MonoBehaviour {
 
                     GameObject tempCube = GameObject.Find(hit.collider.gameObject.name);
                     GameObject tempProject = (GameObject)Instantiate(bloob, cp, Quaternion.Euler(new Vector3(90, 0, 0)));
-<<<<<<< HEAD
+
 
                     if (hit.collider.gameObject.tag == "cube")
                     {
                         tempProject.transform.parent = tempCube.transform;
                     }
 
-=======
+
                     
 					if(tempCube.name != "FPSController")
 					{
 						tempProject.transform.parent = tempCube.transform;
 					}
->>>>>>> 6fc0e965ace82d6ff4ec6ef36fe029d4562805db
+
                 }
 			}
 		}
