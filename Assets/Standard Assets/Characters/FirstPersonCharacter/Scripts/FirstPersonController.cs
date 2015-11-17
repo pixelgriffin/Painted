@@ -133,7 +133,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (m_CharacterController.transform.position.y < -100f)
             {
                 //m_Camera.transform.LookAt(GameObject.Find("Sphere").transform);
-                m_MouseLook.LookRotation(GameObject.Find("Sphere").transform.position, m_CharacterController.transform, m_Camera.transform);
+                m_MouseLook.LookRotation(GameObject.Find("WinCondition").transform.position, m_CharacterController.transform, m_Camera.transform);
             }
         }
 

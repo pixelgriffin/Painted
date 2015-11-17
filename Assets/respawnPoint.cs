@@ -24,6 +24,7 @@ public class respawnPoint : MonoBehaviour
         {
             // you have fallen and died
             player.transform.position = pos;
+			GameObject.Find("GUI").GetComponent<AudioSource>().Play();
         }
 	}
 }
