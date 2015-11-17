@@ -14,6 +14,7 @@ public class respawnPoint : MonoBehaviour
     {
         // assign reference
         player = GameObject.Find("FPSController");
+        pos = player.transform.position;
 	}
 	
 	// Update is called once per frame

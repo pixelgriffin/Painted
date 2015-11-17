@@ -4,6 +4,9 @@ using System.Collections;
 public class sticky : MonoBehaviour
 {
 
+    // variables
+
+
     // Use this for initialization
     void Start()
     {
@@ -21,10 +24,9 @@ public class sticky : MonoBehaviour
         
         if (collision.gameObject.tag == "cube")
         {
-            if(collision.gameObject.name == "Cube 1")
-                Debug.Log("Colliding enter" + collision.gameObject.name);
             GameObject tempCube = GameObject.Find(collision.gameObject.name);
             transform.parent = tempCube.transform;
+            // we are a childof the block
         }
     }
 
@@ -33,5 +35,6 @@ public class sticky : MonoBehaviour
       
         if (collision.gameObject.tag == "cube")
             transform.parent = null;
+
     }
 }

@@ -7,7 +7,7 @@ public class movingPlatScr : MonoBehaviour
     Rigidbody rigidbodyRef;
     public float vectorForce;
     Transform platform;
-    Transform player;
+    GameObject player;
     public Vector3 point1, point2;
     public bool moveX, moveY, moveZ;
     bool moveFB = true;
@@ -24,7 +24,7 @@ public class movingPlatScr : MonoBehaviour
     {
         Debug.Log("Starting Movment");
         rigidbodyRef = this.gameObject.GetComponent<Rigidbody>();
-        player = this.gameObject.GetComponent<Transform>();
+        player = GameObject.Find("FPSController");
     }
 
     // Update is called once per frame
@@ -82,15 +82,18 @@ public class movingPlatScr : MonoBehaviour
             if (moveX)
             {
                 rigidbodyRef.AddForce(new Vector3(1, 0, 0) * vectorForce, ForceMode.Impulse);
+                player.GetComponent<Rigidbody>().AddForce(new Vector3(1, 0, 0) * vectorForce, ForceMode.Impulse);
             }
             if (moveY)
             {
                 rigidbodyRef.AddForce(new Vector3(0, 1, 0) * vectorForce, ForceMode.Impulse);
+                player.GetComponent<Rigidbody>().AddForce(new Vector3(0, 1, 0) * vectorForce, ForceMode.Impulse);
                 Debug.Log("Moving Up");
             }
             if (moveZ)
             {
                 rigidbodyRef.AddForce(new Vector3(0, 0, 1) * vectorForce, ForceMode.Impulse);
+                player.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, 1) * vectorForce, ForceMode.Impulse);
             }
 
         }
@@ -101,15 +104,18 @@ public class movingPlatScr : MonoBehaviour
             if (moveX)
             {
                 rigidbodyRef.AddForce(new Vector3(-1, 0, 0) * vectorForce, ForceMode.Impulse);
+                player.GetComponent<Rigidbody>().AddForce(new Vector3(-1, 0, 0) * vectorForce, ForceMode.Impulse);
             }
             if (moveY)
             {
                 rigidbodyRef.AddForce(new Vector3(0, -1, 0) * vectorForce, ForceMode.Impulse);
+                player.GetComponent<Rigidbody>().AddForce(new Vector3(0, -1, 0) * vectorForce, ForceMode.Impulse);
             }
             if (moveZ)
             {
 
                 rigidbodyRef.AddForce(new Vector3(0, 0, -1) * vectorForce, ForceMode.Impulse);
+                player.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, -1) * vectorForce, ForceMode.Impulse);
 
             }
 
