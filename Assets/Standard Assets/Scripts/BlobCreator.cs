@@ -36,7 +36,11 @@ public class BlobCreator : MonoBehaviour {
                     
                     GameObject tempCube = GameObject.Find(hit.collider.gameObject.name);
                     GameObject tempProject = (GameObject)Instantiate(bloob, cp, Quaternion.Euler(new Vector3(90, 0, 0)));
-                    tempProject.transform.parent = tempCube.transform;
+
+                    if (hit.collider.gameObject.tag == "cube")
+                    {
+                        tempProject.transform.parent = tempCube.transform;
+                    }
 
                 }
 			}
