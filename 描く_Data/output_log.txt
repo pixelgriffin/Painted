@@ -17,7 +17,7 @@ Loading C:\Users\Nathan\Desktop\Kaku\Painted\描く_Data\Managed\UnityEngine.UI.
 Platform assembly: C:\Users\Nathan\Desktop\Kaku\Painted\描く_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\Nathan\Desktop\Kaku\Painted\描く_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Nathan\Desktop\Kaku\Painted\描く_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.057 seconds
+- Completed reload, in  0.059 seconds
 desktop: 1920x1200 59Hz; virtual: 5206x1200 at -3286,0
 <RI> Initializing input.
 <RI> Input initialized.
