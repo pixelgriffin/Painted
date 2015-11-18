@@ -3,6 +3,8 @@ using System.Collections;
 
 public class BlobCreator : MonoBehaviour {
 
+	public int maxBlobs = 100;
+
 	public GameObject bloob;
 
 	private float lastX;
@@ -10,10 +12,14 @@ public class BlobCreator : MonoBehaviour {
 
 	private float time;
 
+	private ArrayList blobs;
+
 
 	void Start () {
 		lastX = gameObject.transform.position.x;
 		lastZ = gameObject.transform.position.z;
+
+		blobs = new ArrayList();
 
 		time = 0;
 	}
@@ -36,6 +42,19 @@ public class BlobCreator : MonoBehaviour {
 
                     GameObject tempCube = GameObject.Find(hit.collider.gameObject.name);
                     GameObject tempProject = (GameObject)Instantiate(bloob, cp, Quaternion.Euler(new Vector3(90, 0, 0)));
+
+					blobs.Add(tempProject);
+
+					int i = 0;
+					while(blobs.Count > maxBlobs)
+					{
+						if(blobs[i] != null)
+						{
+							Destroy(blobs[i] as GameObject);
+							blobs.RemoveAt(i);
+						}
+						i++;
+					}
 
 
                     if (hit.collider.gameObject.tag == "cube")
