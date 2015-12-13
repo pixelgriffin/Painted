@@ -14,9 +14,17 @@ public class BlobCreator : MonoBehaviour {
 
 	private ArrayList blobs;
 
+    // particle projection
+    public GameObject paintGun;
+    
 
-	void Start () {
-		lastX = gameObject.transform.position.x;
+
+	void Start ()
+    {
+        paintGun = GameObject.Find("paintGun");
+        paintGun.GetComponent<ParticleSystem>().enableEmission = false;
+
+        lastX = gameObject.transform.position.x;
 		lastZ = gameObject.transform.position.z;
 
 		blobs = new ArrayList();
@@ -25,11 +33,18 @@ public class BlobCreator : MonoBehaviour {
 	}
 
 	void Update () {
+
 		//shooting
 		time += Time.deltaTime;
+        
+        
 
 		if(Input.GetMouseButton(0))
 		{
+            // activate the shooting effects
+            paintGun.GetComponent<ParticleSystem>().enableEmission = true; 
+
+            // create the blob
 			if(time > 0.015)
 			{
 				time = 0;
@@ -72,7 +87,10 @@ public class BlobCreator : MonoBehaviour {
                 }
 			}
 		}
-
+        else
+        {
+            paintGun.GetComponent<ParticleSystem>().enableEmission = false;
+        }
 		//movement
 		/*if(lastX != gameObject.transform.position.x)
 		{
